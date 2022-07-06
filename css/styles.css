@@ -1,43 +1,22 @@
 /* ============== VARIABLES CSS ============== */
 :root {
-  --header-height: 3rem;
+  --header-height: 3rem; /* Altura de Menú */
+  --body-font: "Poppins", sans-serif; /* Fuente */
+  --normal-font-size: 0.938rem;
+  --text-color: hsl(var(--change-color), 8%, 45%);
+  --body-color: hsl(var(--change-color), 60%, 99%);
+  --title-color: hsl(var(--change-color), 8%, 15%);
+  --font-semi-bold: 600;
 
-  /* ============== Colores ============== */
+  /* ============== Colores Base ============== */
   --change-color: 87; /* purple: 250, green: 142 o 87, orange: 32 pink: 340 */
 
-  --first-color: hsl(var(--change-color), 69%, 61%);
-  --first-color-second: hsl(var(--change-color), 69%, 61%);
-  --first-color-alt: hsl(var(--change-color), 57%, 53%);
-  --first-color-lighter: hsl(var(--change-color), 92%, 85%);
-  --title-color: hsl(var(--change-color), 8%, 15%);
-  --text-color: hsl(var(--change-color), 8%, 45%);
-  --text-color-light: hsl(var(--change-color), 8%, 65%);
-  --input-color: hsl(var(--change-color), 70%, 96%);
-  --body-color: hsl(var(--change-color), 60%, 99%);
-  --container-color: #fff;
-  --white-alpha-color: rgba(255, 255, 255, 0.5);
-
-  /* ============== Fuente y Tipografía ============== */
-  --body-font: "Poppins", sans-serif;
-
-  /* 0.5rem = 8px, 1rem = 16px, 1.5rem = 24px, ... */
   --big-font-size: 7.5vw;
-  /* --big-font-size: 2rem; */
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 5.5vw;
-  /* --h3-font-size: 1.125rem; */
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
 
-  /* ============== Font Weight ============== */
-  --font-medium: 500;
-  --font-semi-bold: 600;
-
-  /* ============== Margenes Bottom ============== */
-
-  /* 0.25rem = 4px, 0.5rem = 8px, 0.75rem = 12px ... */
+  /* ============== Margin Bottom (Márgenes) ============== */
   --mb-0-25: 0.25rem;
   --mb-0-5: 0.5rem;
   --mb-0-75: 0.75rem;
@@ -46,6 +25,26 @@
   --mb-2: 2rem;
   --mb-2-5: 2.5rem;
   --mb-3: 3rem;
+
+  --first-color: hsl(var(--change-color), 69%, 61%);
+  --first-color-second: hsl(var(--change-color), 69%, 61%);
+  --first-color-alt: hsl(var(--change-color), 57%, 53%);
+  --first-color-lighter: hsl(var(--change-color), 92%, 85%);
+  --text-color-light: hsl(var(--change-color), 8%, 65%);
+  --input-color: hsl(var(--change-color), 70%, 96%);
+  --container-color: #fff;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+
+  /* 0.5rem = 8px, 1rem = 16px, 1.5rem = 24px, ... */
+  /* --big-font-size: 2rem; */
+  /* --h3-font-size: 1.125rem; */
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /* ============== Font Weight ============== */
+  --font-medium: 500;
+
+  /* 0.25rem = 4px, 0.5rem = 8px, 0.75rem = 12px ... */
 
   /* ============== z-index ============== */
   --z-tooltip: 10;
@@ -110,18 +109,18 @@ img {
   padding: 2rem 0 4rem;
 }
 
-.section__title {
+.section_title {
   font-size: var(--h1-font-size);
 }
 
-.section__subtitle {
+.section_subtitle {
   display: block;
   font-size: var(--small-font-size);
-  margin-bottom: var(--mb-3);
+  margin-bottom: var(--mb-2);
 }
 
-.section__title,
-.section__subtitle {
+.section_title,
+.section_subtitle {
   text-align: center;
 }
 
@@ -316,10 +315,10 @@ img {
 }
 
 /* ============== ABOUT ============== */
-.about__blob {
+.about_blob {
   position: relative;
-  width: 165px;
-  height: 165px;
+  width: 160px;
+  height: 160px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
@@ -329,16 +328,15 @@ img {
   z-index: -1;
 }
 
-.about__blob-img {
+.about_blob-img {
   position: absolute;
-  top: -13px;
-  width: 140px;
+  top: -35px;
   filter: grayscale(100%);
 }
 
 .about__description {
   text-align: center;
-  margin-bottom: var(--mb-2-5);
+  margin-bottom: var(--mb-2);
 }
 
 .about__buttons {
@@ -408,15 +406,15 @@ img {
 }
 
 .skills__html {
-  width: 70%;
+  width: 50%;
 }
 
 .skills__css {
-  width: 60%;
+  width: 50%;
 }
 
 .skills__js {
-  width: 60%;
+  width: 50%;
 }
 
 .skills__react {
@@ -460,7 +458,8 @@ img {
 
 /* ============== SERVICES ============== */
 .services__container {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  flex-direction: column;
   gap: 1.5rem;
 }
 
@@ -471,6 +470,8 @@ img {
   border-radius: 0.5rem;
   box-shadow: 0 2px 5px rgb(0, 0, 0, 0.25);
   transition: 0.3s;
+  width: 70%;
+  /* flex-wrap: wrap; */
 }
 
 .services__content:hover {
