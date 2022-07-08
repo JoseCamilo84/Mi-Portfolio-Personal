@@ -19,22 +19,24 @@ navItem.forEach(item => item.addEventListener('click', () => {
 
 
 /* ============== SKILLS (Habilidades) ============== */
-const skillsHeader = document.querySelectorAll('.skills__header');
+const skillsHeader = document.querySelectorAll('.skills_header');
 
 skillsHeader.forEach((elm, index) =>
     elm.addEventListener('click', () => {
-        let accordion = skillsHeader[index].parentNode.className;
+        let skillsClassParent = skillsHeader[index].parentNode.className;
 
-        accordion === 'skills__content skills__open'
-            ? skillsHeader[index].parentNode.className = 'skills__content skills__close'
-            : skillsHeader[index].parentNode.className = 'skills__content skills__open';
+        console.log(skillsClassParent);// Las clases del Nodo Padre
+
+        skillsClassParent === 'skills_content skills_open'
+            ? skillsHeader[index].parentNode.className = 'skills_content skills_close'
+            : skillsHeader[index].parentNode.className = 'skills_content skills_open';
     })
 );
 
 /* ============== VENTANA MODAL ============== */
-const modalBtns = document.querySelectorAll('.services__button'),
-    modalWindows = document.querySelectorAll('.services__modal'),
-    modalClose = document.querySelectorAll('.services__modal-close');
+const modalBtns = document.querySelectorAll('.services_button'),
+    modalWindows = document.querySelectorAll('.services_modal'),
+    modalClose = document.querySelectorAll('.services_modal-close');
 
 modalBtns.forEach((ele, index) => {
     ele.addEventListener('click', () => {
@@ -47,5 +49,3 @@ modalClose.forEach((ele, index) => {
         modalWindows[index].classList.remove('active-modal');
     });
 });
-
-/* ============== SWIPER CARROUSEL ============== */
